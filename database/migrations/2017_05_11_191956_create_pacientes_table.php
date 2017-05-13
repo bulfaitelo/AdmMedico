@@ -19,9 +19,8 @@ class CreatePacientesTable extends Migration
             $table->string('nome_paciente')->nullable();
             $table->date('data_nascimento')->nullable();
             $table->string('natural')->nullable();
-            $table->string('rg')->nullable();
             $table->string('cpf', 20)->unique();
-            $table->string('sexo')->nullable();
+            $table->tinyInteger('sexo')->nullable();
             $table->string('estado_civil')->nullable();
             $table->string('profissao')->nullable();
             $table->string('endreco')->nullable();
