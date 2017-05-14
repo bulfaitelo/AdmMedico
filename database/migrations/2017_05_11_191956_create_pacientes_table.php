@@ -14,6 +14,7 @@ class CreatePacientesTable extends Migration
     public function up()
     {
         Schema::create('pacientes', function (Blueprint $table) {
+            $table->engine = 'MyISAM';            
             $table->increments('id');
             $table->string('cod_paciente')->nullable();
             $table->string('nome_paciente')->nullable();

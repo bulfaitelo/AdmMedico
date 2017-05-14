@@ -27,6 +27,7 @@ class AlterFichaPacientesTable extends Migration
     {
         Schema::table('ficha_pacientes', function (Blueprint $table) {
             $table->dropForeign('ficha_pacientes_paciente_id_foreign');           
+            $table->dropForeign('ficha_pacientes_paciente_id_foreign');           
         });
     }
 }

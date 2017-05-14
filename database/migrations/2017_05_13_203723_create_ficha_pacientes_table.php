@@ -14,6 +14,8 @@ class CreateFichaPacientesTable extends Migration
     public function up()
     {
         Schema::create('ficha_pacientes', function (Blueprint $table) {
+
+            $table->engine = 'MyISAM';
             $table->increments('id');
             $table->smallInteger('paciente_id');
             $table->text('queixa')->nullable();           

@@ -16,3 +16,4 @@
 // });
 
 Route::resource('/', 'PacientesController');
+// Route::resource('/{id}', 'PacientesController@show');
