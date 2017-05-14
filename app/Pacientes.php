@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Pacientes extends Model
 {
-    public function ficha(){
-		return $this->belongsTo(FichaPaciente::class, 'categoria_id');
+	public function ficha(){
+		return $this->hasMany(FichaPaciente::class, 'paciente_id');
 	}
 }

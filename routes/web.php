@@ -11,9 +11,8 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return redirect('/pacientes');
+});
 
-Route::resource('/', 'PacientesController');
-// Route::resource('/{id}', 'PacientesController@show');
+Route::resource('/pacientes', 'PacientesController');

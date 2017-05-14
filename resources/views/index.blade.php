@@ -32,6 +32,7 @@
 				
 			</tr>
 		</thead>
+		{{ $pacientes = $pacientes->orderBy('nome_paciente') }}
 		@foreach($pacientes as $paciente)
 		<tbody>
 			<tr>
@@ -39,8 +40,8 @@
 				<td><b>{{$paciente->nome_paciente}}</b></td>
 				<td>{{$paciente->cidade}}</td>
 				<td>{{$paciente->tel_residencial}} / {{$paciente->tel_celular}}</td>
-				<td> <pre>{{ var_dump($paciente->ficha) }}</pre></td>
-				<td><a href="{{url('/'. $paciente->id) }}"><button type="button" class=" navbar-right btn btn-info">Ver Detalhes</button></a></td>	
+				<td> {{ var_dump($paciente->ficha) }}</td>
+				<td><a href="{{ url('pacientes/'. $paciente->id) }}"><button type="button" class=" navbar-right btn btn-info">Ver Detalhes</button></a></td>	
 
 			</tr>			
 		</tbody>
