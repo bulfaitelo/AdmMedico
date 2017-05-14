@@ -19,7 +19,7 @@ class CreatePacientesTable extends Migration
             $table->string('nome_paciente')->nullable();
             $table->date('data_nascimento')->nullable();
             $table->string('natural')->nullable();
-            $table->string('cpf', 20)->unique();
+            $table->string('cpf', 20)->unique()->nullable();
             $table->tinyInteger('sexo')->nullable();
             $table->string('estado_civil')->nullable();
             $table->string('profissao')->nullable();
@@ -33,7 +33,7 @@ class CreatePacientesTable extends Migration
             $table->string('tel_comercial')->nullable();
             $table->string('email')->nullable();
             $table->string('web_page')->nullable();
-            $table->string('indicado_id')->nullable();
+            $table->string('indicado_nome')->nullable();
             $table->string('convenio')->nullable();
             $table->string('re_consultas')->nullable();
             $table->text('observações')->nullable();

@@ -15,7 +15,7 @@ class CreateFichaPacientesTable extends Migration
     {
         Schema::create('ficha_pacientes', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedSmallInteger('paciente_id');
+            $table->smallInteger('paciente_id');
             $table->text('queixa')->nullable();           
             $table->timestamps();            
         });
