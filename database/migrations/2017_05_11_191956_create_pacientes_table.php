@@ -19,12 +19,12 @@ class CreatePacientesTable extends Migration
             $table->string('cod_paciente')->nullable();
             $table->string('nome_paciente')->nullable();
             $table->date('data_nascimento')->nullable();
-            $table->string('natural')->nullable();
-            $table->string('cpf', 20)->unique()->nullable();
+            $table->string('naturalidade')->nullable();
+            $table->string('cpf', 20)->nullable();
             $table->tinyInteger('sexo')->nullable();
             $table->string('estado_civil')->nullable();
             $table->string('profissao')->nullable();
-            $table->string('endreco')->nullable();
+            $table->string('endereco')->nullable();
             $table->string('estado', 2)->nullable();
             $table->string('cidade')->nullable();
             $table->string('bairro')->nullable();
@@ -37,7 +37,7 @@ class CreatePacientesTable extends Migration
             $table->string('indicado_nome')->nullable();
             $table->string('convenio')->nullable();
             $table->string('re_consultas')->nullable();
-            $table->text('observações')->nullable();
+            $table->text('observacoes')->nullable();
             $table->timestamps();
         });
     }

@@ -10,8 +10,8 @@ use Session;
 
 class PacientesController extends Controller
 {
-    public function index(){
-    	$pacientes = Pacientes::all();
+    public function index($busca = null){
+    	$pacientes = Pacientes::paginate(40);
     	return view('pacientes.index', array('pacientes' => $pacientes, 'busca' => null));
     }
 

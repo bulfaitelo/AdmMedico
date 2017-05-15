@@ -47,7 +47,5 @@
 		@endforeach  		
 		</table>
 	</div>	
-
-	
-	
+{{$pacientes->links()}}	
 @endsection

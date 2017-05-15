@@ -18,6 +18,9 @@
 	</style>
 @endsection
 @section('content')
+	<a href="">
+		<button type="button" class="btn btn-right btn-info btn-lg"><b class="glyphicon glyphicon-edit" ></b> Editar Paciente </button>		
+	</a>
 	<h1>{{ $paciente->nome_paciente}}</h1>
 	<div class="row">
 		<div class="col-md-8"><b># {{ $paciente->cod_paciente }}</b></div>				
@@ -60,8 +63,14 @@
 	<div class="row">
 		<div class="col-md-6"><h3>E-mail: <b>{{ $paciente->email }}</b></h3></div>		
 	</div>
+	<div class="row">
+		<h3>Observações</h3>
+		<div class="col-md-6"><b>{{ $paciente->observacoes }}</b></div>
+	</div>
 	<hr>
-	<button type="button" class="btn btn-right btn-success btn-lg"><b class="glyphicon glyphicon-plus" ></b> Nova Consulta </button>
+	<a href="#">
+		<button type="button" class="btn btn-right btn-success btn-lg"><b class="glyphicon glyphicon-plus" ></b> Nova Consulta </button>		
+	</a>
 	<h2>Ultimas Consultas</h2>
 	<!-- Main component for a primary marketing message or call to action -->
 	@foreach($paciente->ficha as $ficha)
