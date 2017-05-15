@@ -1,12 +1,13 @@
 @extends('layouts.app')
 @section('title', 'Listagem de Pacientes')
+@section('home', 'active')
 @section('content')
 	<h1>Listagem de todos os pacientes</h1>
-	{{Form::open(['url'=>['buscar']])}}
+	{{Form::open(array('method'=>'get'))}}
 	<div class="row">
 		<div class="col-lg-12">
 			<div class="input-group">
-				{{Form::text('busca', $busca,['class'=>'form-control', 'required', 'placeholder'=>'Buscar'])}}
+				{{Form::text('busca', $busca,['class'=>'form-control', 'placeholder'=>'Buscar por Nome ou Código '])}}
 				<span class="input-group-btn">
 					{{Form::submit('Buscar', ['class'=>'btn btn-default'])}}
 				</span>
@@ -47,5 +48,5 @@
 		@endforeach  		
 		</table>
 	</div>	
-{{$pacientes->links()}}	
+{{$pacientes->appends(['busca' => $busca])->links() }}	
 @endsection

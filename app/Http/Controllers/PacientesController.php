@@ -10,9 +10,16 @@ use Session;
 
 class PacientesController extends Controller
 {
-    public function index($busca = null){
-    	$pacientes = Pacientes::paginate(40);
-    	return view('pacientes.index', array('pacientes' => $pacientes, 'busca' => null));
+    public function index(Request $request){
+        if($request->input('busca')){
+            $pacientes = Pacientes::where(
+            'nome_paciente', 'LIKE', 
+            '%'.$request->input('busca').'%')->orwhere('cod_paciente', 'LIKE', '%'.$request->input('busca').'%')->paginate(40);
+            return view('pacientes.index', array('pacientes'=>$pacientes, 'busca'=>$request->input('busca')));
+        }else{
+        	$pacientes = Pacientes::paginate(40);
+        	return view('pacientes.index', array('pacientes' => $pacientes, 'busca' => null));            
+        }
     }
 
     public function show($id){
