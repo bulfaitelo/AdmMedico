@@ -4,7 +4,8 @@
 	<meta charset="UTF-8">
 	<title>@yield('title')</title>
 	{{Html::style('css/bootstrap.min.css')}}
-	{{Html::style('css/bootstrap-theme.min.css')}}
+  {{Html::style('css/bootstrap-theme.min.css')}}
+
   @yield('header')
 </head>
 <body style="padding-top: 70px;">
@@ -25,7 +26,7 @@
             <li class="@yield('home')" ><a href="{{url('pacientes/')}}">Listar Pacientes</a></li>            
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li class="active "><a href="#"> <b class="glyphicon glyphicon-plus-sign" ></b> Cadastrar Paciente<span class="sr-only">(current)</span></a></li>
+            <li class="@yield('create')" ><a href="{{url('pacientes/create')}}"> <b class="glyphicon glyphicon-plus-sign" ></b> Cadastrar Paciente<span class="sr-only">(current)</span></a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -33,7 +34,9 @@
 	<div class="container">
 		@yield('content')
 	</div>
-	{{Html::script('js/jquery-3.2.1.min.js')}}
-	{{Html::script('js/bootstrap.min.js')}}
+  {{Html::script('js/jquery-3.2.1.min.js')}}
+  {{Html::script('js/bootstrap.min.js')}}
+  {{Html::script('js/sis.js')}}
+  {{Html::script('js/jquery.maskedinput.min.js')}}
 </body>
 </html>

@@ -115,6 +115,7 @@ return [
     'attributes' => [
         'referencia' => 'Referência',
         'titulo' => 'Título',
+        'nome_paciente' => 'Nome do Paciente',
     ],
 
 ];

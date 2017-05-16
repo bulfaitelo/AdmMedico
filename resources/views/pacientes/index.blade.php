@@ -3,6 +3,9 @@
 @section('home', 'active')
 @section('content')
 	<h1>Listagem de todos os pacientes</h1>
+	@if(Session::has('mensagem'))
+		<div class="alert alert-success">{{Session::get('mensagem')}}{{ Session::forget('mensagem') }}</div>
+	@endif
 	{{Form::open(array('method'=>'get'))}}
 	<div class="row">
 		<div class="col-lg-12">
@@ -14,10 +17,7 @@
 			</div>
 		</div>
 	</div>
-	{{Form::close()}}
-	@if(Session::has('mensagem'))
-		<div class="alert alert-success">{{Session::get('mensagem')}}</div>
-	@endif
+	{{Form::close()}}	
 	<div class="row">
 		<hr>
 	</div>
