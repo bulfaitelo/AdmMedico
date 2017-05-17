@@ -16,3 +16,4 @@ Route::get('/', function () {
 });
 
 Route::resource('/pacientes', 'PacientesController');
+Route::resource('/pacientes/ficha', 'FichaController');

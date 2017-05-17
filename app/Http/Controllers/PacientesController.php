@@ -30,8 +30,11 @@ class PacientesController extends Controller
     destalhes do paciente
     */
     public function show($id){
-    	$paciente = Pacientes::find($id);
-        $ficha_paciente = FichaPaciente::find($id);
+
+        if($id == 'ficha'){
+            return redirect('/pacientes');
+        }
+    	$paciente = Pacientes::find($id);       
     	return view('pacientes.show', array('paciente' => $paciente, 'idade' => $this->idade($paciente->data_nascimento)));
     }
 
