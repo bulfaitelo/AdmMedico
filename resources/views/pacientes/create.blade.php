@@ -23,7 +23,7 @@
 <div class="row">
 	<div class="form-group col-md-2">
 		{{Form::label('cod_paciente', 'Cod')}}
-		{{Form::text('cod_paciente', '', ['class'=>'form-control', 'placeholder'=>'Código'])}}
+		{{Form::text('cod_paciente', $cod_paciente+1, ['class'=>'form-control', 'placeholder'=>'Código'])}}
 	</div>		
 	<div class="form-group col-md-10">		
 		{{Form::label('nome_paciente', 'Nome do Paciente')}}

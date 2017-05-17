@@ -18,9 +18,32 @@
 	</style>
 @endsection
 @section('content')
-	<a href="">
+	
+	<a href="{{url('pacientes/'. $paciente->id.'/edit')}}">
 		<button type="button" class="btn btn-right btn-info btn-lg"><b class="glyphicon glyphicon-edit" ></b> Editar Paciente </button>		
 	</a>
+		<button type="button" style="margin-right: 6px; " data-toggle='modal' data-target='.modal_exclude'  class="btn btn-right btn-danger btn-lg"><b class="glyphicon glyphicon-remove" ></b> Excluir Paciente </button>		
+	<div class='modal fade modal_exclude' tabindex='-1' role='dialog' aria-labelledby='mySmallModalLabel' aria-hidden='true'>
+	  <div class='modal-dialog modal-sm'>
+	    <div class='modal-content'>
+	    	<div class='modal-header'>
+	    		<button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
+	    		<h4 class='modal-title'>Excluir</h4>
+	    	</div>
+	    	<div class='modal-body' >
+	    		<p>Realmente Deseja excluir este Paciente ?</p>
+	    	</div>
+	    	<div class='modal-footer' >
+				{{Form::open(['route'=>['pacientes.destroy', $paciente->id], 'method' => 'DELETE'])}}
+					<button type='button' class='btn btn-default' data-dismiss='modal'>Cancelar</button>
+					<button type='submit' class='btn btn-danger'><span class='glyphicon glyphicon-trash' > </span> Excluir</button>				
+				{{Form::close()}}				
+	    	</div>										     
+	    </div>
+	  </div>
+	</div>
+
+	
 	<h1>{{ $paciente->nome_paciente}}</h1>
 	<div class="row">
 		<div class="col-md-8"><b># {{ $paciente->cod_paciente }}</b></div>				
@@ -64,14 +87,20 @@
 		<div class="col-md-6"><h3>E-mail: <b>{{ $paciente->email }}</b></h3></div>		
 	</div>
 	<div class="row">
-		<h3>Observações</h3>
-		<div class="col-md-8"><b>{!! nl2br(e($paciente->observacoes)) !!}</b></div>
+		<div class="col-md-8">
+			<h3>Observações</h3>
+			<b>{!! nl2br(e($paciente->observacoes)) !!}</b>
+		</div>
 	</div>
 	<hr>
 	<a href="#">
 		<button type="button" class="btn btn-right btn-success btn-lg"><b class="glyphicon glyphicon-plus" ></b> Nova Consulta </button>		
 	</a>
-	<h2>Ultimas Consultas</h2>
+	<div class="row">
+		<div class="col-md-8">
+			<h2>Ultimas Consultas</h2>		
+		</div>
+	</div>
 	<!-- Main component for a primary marketing message or call to action -->
 	@foreach($paciente->ficha as $ficha)
 		<div class="row">

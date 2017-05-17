@@ -116,6 +116,7 @@ return [
         'referencia' => 'Referência',
         'titulo' => 'Título',
         'nome_paciente' => 'Nome do Paciente',
+        'cod_paciente' => 'Cod',
     ],
 
 ];
