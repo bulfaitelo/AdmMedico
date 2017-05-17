@@ -65,7 +65,7 @@
 	</div>
 	<div class="row">
 		<h3>Observações</h3>
-		<div class="col-md-6"><b>{{ $paciente->observacoes }}</b></div>
+		<div class="col-md-8"><b>{!! nl2br(e($paciente->observacoes)) !!}</b></div>
 	</div>
 	<hr>
 	<a href="#">
@@ -76,8 +76,8 @@
 	@foreach($paciente->ficha as $ficha)
 		<div class="row">
 			<h4>Data: {{ date('d/m/Y' ,strtotime($ficha->created_at)) }}</h4>			
-		    <div class="col-md-12 info-consultas "><p>
-		    {{$ficha->queixa}}
+		    <div class="col-md-12 info-consultas "><p>		     	
+			{!! nl2br(e($ficha->queixa)) !!}
 		    </p></div>		
 		</div>
 	@endforeach	
