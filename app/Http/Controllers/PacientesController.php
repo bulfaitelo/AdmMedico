@@ -131,7 +131,10 @@ class PacientesController extends Controller
 
        public function destroy($id){
         $paciente = Pacientes::find($id);
+        $ficha = FichaPaciente::where('paciente_id', $id);
+        $ficha->delete();        
         $paciente->delete();
+
         Session::put('mensagem', 'Pacietne Excluido com sucesso.');
         return redirect('/');
     }
