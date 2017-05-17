@@ -41,7 +41,7 @@
 				<td>{{$paciente->cidade}}</td>
 				<td>{{$paciente->tel_residencial}} / {{$paciente->tel_celular}}</td>
 				<td> {{ count($paciente->ficha) }}</td>
-				<td><a href="{{ url('pacientes/'. $paciente->id) }}"><button type="button" class=" navbar-right btn btn-info">Ver Detalhes</button></a></td>	
+				<td><a href="{{ url('pacientes/'. $paciente->id) }}"><button type="button" class=" navbar-right btn btn-info"><span class=" glyphicon glyphicon-menu-hamburger"></span> Ver Detalhes</button></a></td>	
 
 			</tr>			
 		</tbody>
