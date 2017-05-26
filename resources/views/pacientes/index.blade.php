@@ -40,7 +40,7 @@
 				<td><b>{{$paciente->nome_paciente}}</b></td>
 				<td>{{$paciente->cidade}}</td>
 				<td>{{$paciente->tel_residencial}} / {{$paciente->tel_celular}}</td>
-				<td> {{ count($paciente->ficha) }}</td>
+				<td> {{ $paciente->ficha->count() }}</td>
 				<td><a href="{{ url('pacientes/'. $paciente->id) }}"><button type="button" class=" navbar-right btn btn-info"><span class=" glyphicon glyphicon-menu-hamburger"></span> Ver Detalhes</button></a></td>	
 
 			</tr>			
